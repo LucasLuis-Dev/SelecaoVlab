@@ -15,8 +15,12 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@ngx-env/builder:application",
           "options": {
+            "ngxEnv": {
+              "prefix": "NG_APP_",
+              "runtime": true
+            },
             "outputPath": "dist/selecao-vlab",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -61,7 +65,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@ngx-env/builder:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "selecaoVlab:build:production"
@@ -98,5 +102,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "a3a46971-7f7a-4a0f-a9ff-30f51eb28702"
   }
 }
